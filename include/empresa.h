@@ -13,10 +13,9 @@ class Empresa{
 
 	public:
 		
-		Empresa(string n);
-		string getNome();
+		Empresa(string n, string c);
 		void setNome();
-		void addFuncionario();
+		void addFuncionario(Funcionario &f);
 		void listarFuncionarios();
 		void aumentoSalario();
 };
