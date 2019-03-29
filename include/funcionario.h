@@ -13,6 +13,11 @@ class Funcionario{
 
 	public:
 
+		Funcionario(string n, float s, Data d);
+		string getNome();
+		float getSalario();
+		Data getDataAdmissao();	
+
 		friend ostream& operator<<(ostream &o, const Funcionario f);
 
 };

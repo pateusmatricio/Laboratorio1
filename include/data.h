@@ -3,7 +3,7 @@
 
 using namespace std;
 
-class Funcionario{
+class Data{
 	private:
 		short dia;
 		short mes;
@@ -11,6 +11,8 @@ class Funcionario{
 	public:
 
 		Data(short d, short m, short a);
+
+		friend ostream& operator<<(ostream &o, const Data d);
 
 };
 
