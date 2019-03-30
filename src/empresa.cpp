@@ -10,7 +10,11 @@ Empresa::Empresa(string n, string c): nome(n), cnpj(c){
 	vector<Funcionario> listaFuncionarios;
 }
 
-void Empresa::addFuncionario(Funcionario &f){
+string Empresa::getNome(){
+	return nome;
+}
+
+void Empresa::addFuncionario(Funcionario f){
 	int tamanho = listaFuncionarios.size();
 	for (int i = 0; i < tamanho; i++){
 		if(f == listaFuncionarios[i]){
@@ -28,15 +32,15 @@ void Empresa::listarFuncionarios(){
 		cout << listaFuncionarios[i] << endl;
 	}
 }
-/*
-void Empresa::listarFuncionariosExperiencia(){
+
+void Empresa::listarFuncionariosExperiencia(Data atual){
 	int tamanho = listaFuncionarios.size();
 
 	for (int i = 0; i < tamanho; i++){
-		if(listaFuncionarios[i].getDataAdmissao().getDias() > 90)
-		cout << listaFuncionarios[i] << endl;
+		if(listaFuncionarios[i].getDataAdmissao().diferencaDeDias(atual) < 90)
+			cout << "Dias de experiencia: " <<listaFuncionarios[i].getDataAdmissao().diferencaDeDias(atual) << endl << listaFuncionarios[i] << endl ;
 	}
-}*/
+}
 
 void Empresa::aumentoSalarios(float x){
 	int tamanho = listaFuncionarios.size();
@@ -44,4 +48,12 @@ void Empresa::aumentoSalarios(float x){
 	for (int i = 0; i < tamanho; i++){
 		listaFuncionarios[i].aumentaSalario(x);
 	}	
+}
+
+ostream& operator<<(ostream &o, const Empresa &e){
+	o << "Empresa: " << e.nome << "\nCNPJ: " << e.cnpj << "\nNúmero de funcionários: " << e.listaFuncionarios.size() << "\n-----------------------\n";
+}
+
+Empresa::~Empresa(){
+
 }

@@ -51,6 +51,17 @@ bool Data::operator==(Data d){
 	return false;
 }
 
-ostream& operator<<(ostream &o, const Data d){
-	o << d.dia << "/" << d.mes << "/" << d.ano;
+int Data::diferencaDeDias(Data d){
+	int diferenca = 0;
+	diferenca += (d.ano - ano) * 365;
+	diferenca += (d.ano - ano) % 4;
+	diferenca += (d.mes - mes) * 29;
+	diferenca += (d.mes - mes) % 7;
+	diferenca += (d.mes - mes) % 4;
+	diferenca += d.dia - dia;
+	return diferenca;
+}
+
+ostream& operator<<(ostream &o, const Data &d){
+	o << d.dia << "/" << d.mes << "/" << d.ano ;
 }

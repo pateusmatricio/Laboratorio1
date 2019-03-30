@@ -21,7 +21,7 @@ class Funcionario{
 		Data getDataAdmissao();
 
 		bool operator==(Funcionario f);
-		friend ostream& operator<<(ostream &o, const Funcionario f);
+		friend ostream& operator<<(ostream &o, const Funcionario &f);
 
 };
 

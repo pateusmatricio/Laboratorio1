@@ -30,6 +30,6 @@ bool Funcionario::operator==(Funcionario f){
 	return false;
 }
 
-ostream& operator<<(ostream &o, const Funcionario f){
+ostream& operator<<(ostream &o, const Funcionario &f){
 	o << "Nome: " << f.nome << "\nSalário: " << f.salario << "\nData de Admissão: " << f.dataAdmissao << "\n-----------------------\n";
 }

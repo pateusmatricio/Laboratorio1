@@ -17,11 +17,14 @@ class Empresa{
 	public:
 		
 		Empresa(string n, string c);
-		void setNome();
-		void addFuncionario(Funcionario &f);
+		~Empresa();
+		string getNome();
+		void addFuncionario(Funcionario f);
 		void listarFuncionarios();
-		void listarFuncionariosExperiencia();
+		void listarFuncionariosExperiencia(Data atual);
 		void aumentoSalarios(float x);
+
+		friend ostream& operator<<(ostream &o, const Empresa &e);
 };
 
 #endif
