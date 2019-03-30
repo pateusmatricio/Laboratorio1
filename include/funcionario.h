@@ -16,8 +16,11 @@ class Funcionario{
 		Funcionario(string n, float s, Data d);
 		string getNome();
 		float getSalario();
-		Data getDataAdmissao();	
+		void setSalario(float s);
+		void aumentaSalario(float x);
+		Data getDataAdmissao();
 
+		bool operator==(Funcionario f);
 		friend ostream& operator<<(ostream &o, const Funcionario f);
 
 };

@@ -4,7 +4,7 @@ CC = g++
 
 CPPFLAGS = -Wall -ansi -pedantic -O0 -g -std=c++11
 
-OBJS = ./build/main.o ./build/dado.o ./build/jogo.o ./build/jogador.o
+OBJS = ./build/main.o ./build/data.o ./build/funcionario.o ./build/empresa.o
 
 PROG: $(PROG)
 
@@ -14,6 +14,15 @@ $(PROG): $(OBJS)
 	$(CC) $^ $(CPPFLAGS) -o $@
 
 ./build/main.o: ./src/main.cpp
+	$(CC) -c $^ $(CPPFLAGS) -o $@
+
+./build/data.o: ./src/data.cpp
+	$(CC) -c $^ $(CPPFLAGS) -o $@
+
+./build/funcionario.o: ./src/funcionario.cpp
+	$(CC) -c $^ $(CPPFLAGS) -o $@
+
+./build/empresa.o: ./src/empresa.cpp
 	$(CC) -c $^ $(CPPFLAGS) -o $@
 
 clean:
@@ -27,7 +36,3 @@ dir:
 	mkdir -p doc
 	mkdir -p lib
 	mkdir -p test
-
-mv:
-	mv *.cpp ./src/
-	mv *.h ./include/

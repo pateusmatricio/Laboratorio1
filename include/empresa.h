@@ -1,6 +1,9 @@
 #ifndef EMPRESA_H
 #define EMPRESA_H
 
+#include <string>
+#include <vector>
+
 #include "funcionario.h"
 
 using namespace std;
@@ -17,7 +20,8 @@ class Empresa{
 		void setNome();
 		void addFuncionario(Funcionario &f);
 		void listarFuncionarios();
-		void aumentoSalario();
+		void listarFuncionariosExperiencia();
+		void aumentoSalarios(float x);
 };
 
 #endif
