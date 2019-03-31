@@ -1,13 +1,22 @@
+/**
+ * @file data.cpp
+ * @brief Implementação de Data.
+ * @author Mateus Patricio
+ * @date 31/03/2019
+ */
+
 #include <ostream>
 #include <ctime>
 #include <cstdlib>
 
 #include "data.h"
 
+/// @brief Construtor parametrizado com valores inteiros para dia, mês e ano;
 Data::Data(int d, int m, int a): dia(d), mes(m), ano(a) {
 
 }
 
+/// @brief Construtor parametrizado com um valor do time_t que será modificado para o formato;
 Data::Data(time_t &t){
 	dia = (asctime(localtime(&t))[8] - '0' ) * 10 + asctime(localtime(&t))[9] - '0';
 	
@@ -45,12 +54,7 @@ Data::Data(time_t &t){
 	ano = (asctime(localtime(&t))[20] - '0') * 1000 + (asctime(localtime(&t))[21] - '0') * 100 + (asctime(localtime(&t))[22] - '0') * 10 + asctime(localtime(&t))[23] - '0'; 
 }
 
-bool Data::operator==(Data d){
-	if(dia == d.dia && mes == d.mes && ano == d.ano)
-		return true;
-	return false;
-}
-
+/// @brief Método que retorna a diferença de dias entre a Data e a Data recebida como parâmetro;
 int Data::diferencaDeDias(Data d){
 	int diferenca = 0;
 	diferenca += (d.ano - ano) * 365;
@@ -62,6 +66,14 @@ int Data::diferencaDeDias(Data d){
 	return diferenca;
 }
 
+/// @brief Sobrecarga do operador == para comparação entre Datas;
+bool Data::operator==(Data d){
+	if(dia == d.dia && mes == d.mes && ano == d.ano)
+		return true;
+	return false;
+}
+
+/// @brief Sobrecarga do operador << para escrita da data no formato "dia/mês/ano";
 ostream& operator<<(ostream &o, const Data &d){
 	o << d.dia << "/" << d.mes << "/" << d.ano ;
 }

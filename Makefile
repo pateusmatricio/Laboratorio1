@@ -4,7 +4,7 @@ CC = g++
 
 CPPFLAGS = -Wall -ansi -pedantic -O0 -g -std=c++11
 
-OBJS = ./build/main.o ./build/data.o ./build/funcionario.o ./build/empresa.o
+OBJS = ./build/main.o ./build/data.o ./build/gerenciador.o ./build/funcionario.o ./build/empresa.o
 
 PROG: $(PROG)
 
@@ -17,6 +17,9 @@ $(PROG): $(OBJS)
 	$(CC) -c $^ $(CPPFLAGS) -o $@
 
 ./build/data.o: ./src/data.cpp
+	$(CC) -c $^ $(CPPFLAGS) -o $@
+
+./build/gerenciador.o: ./src/gerenciador.cpp
 	$(CC) -c $^ $(CPPFLAGS) -o $@
 
 ./build/funcionario.o: ./src/funcionario.cpp

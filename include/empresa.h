@@ -1,3 +1,9 @@
+/**
+ * @file empresa.h
+ * @brief Classe que representa uma empresa, contendo nome, cnpj e lista de funcionários.
+ * @author Mateus Patricio
+ */
+
 #ifndef EMPRESA_H
 #define EMPRESA_H
 

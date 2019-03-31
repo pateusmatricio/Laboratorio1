@@ -1,3 +1,9 @@
+/**
+ * @file funcionario.h
+ * @brief Classe que representa um funcionário, contendo nome, salario e data de admissão.
+ * @author Mateus Patricio
+ */
+
 #ifndef FUNCIONARIO_H
 #define FUNCIONARIO_H
 
